@@ -1,0 +1,898 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" media="screen" href="css/reset.css" rel="stylesheet" />
+<link type="text/css" media="screen" href="css/style.css" rel="stylesheet" />
+<title>The Transactel Challenge</title>
+<style type='text/css'>
+textarea { font-family: monospace; 
+			font-size: 14px;
+			width: 380px;
+			height: 100px;
+			border: 1px solid black;
+			background: #ddd;
+		}
+
+#code { font-family: monospace; 
+			font-size: 14px;
+			width: 600px !important;
+			height: 300px;
+			border: 1px solid black;
+			background: #ddd;
+		}
+
+</style>
+
+<script type='text/javascript'>
+function GetPosition() 
+{
+	return 'Alnilam';
+}
+
+function SendAnswer(answer)
+{
+	//this is the function you need to call. Really.
+	
+}
+
+
+</script>
+</head>
+<body >
+<div id="website">
+	<div id="header">
+		<div id="logo"></div>
+		<div id="brand_info">
+			<h1>The Transactel Challenge</h1>
+			<h3>El Salvador</h3>
+		</div>
+	</div>
+	<div id="content">
+		<h1 class="pageTitle">Level Ten</h1>
+		
+		<div class="post">
+			<div class="post_content">
+				
+		<p>You are the captain of a starship :-) traveling far far away, you are about to run out of fuel.</p>
+		<p>Your ship travels by jumping from star to star using wormholes. Create a route to get back to the Sun Solar System based on the wormholes available in the table. You have enough fuel for 6 more jumps.</p>
+		<p>Write the code necessary to determine the jumps you need to make to get back to Sun and send it to the server using JavaScript, the answer should be a Comma-Separated List. We will check your answer and save your code.</p>
+		<p>Use the provided functions <b>GetPosition</b> and <b>SendAnswer</b>.</p>
+		<p>Start by calling GetPosition on the first line, run your script and finish calling SendAnswer.</p>
+		<p>Every time you press 'Run My Code' a new galaxy is generated, the galaxy will expire after 10 seconds so you don't get tempted to perform the process manually; your script should take less than ten seconds to run.</p>
+
+		<form method='post'>
+			<p>You are currently in: <b>Alnilam</b>
+			<p>These are the available wormholes:
+			<p>
+					<table id='galaxy' border='2' cellpadding='5'>
+		<tr><td><b>From:</b></td><td colspan='8'>You can travel to:</td></tr>
+		<tr>
+			<td id='Girtab'><b>Girtab</b></td>
+			<td>Lambda Velorum</td>
+			<td>Alhena</td>
+			<td>Bellatrix</td>
+			<td>Sadr</td>
+			<td>Deneb</td>
+			<td>Alpha Centauri B</td>
+			<td>Antares</td>
+			<td>Betelgeuse</td>
+		</tr>
+		<tr>
+			<td id='Achernar'><b>Achernar</b></td>
+			<td>Wei</td>
+			<td>Caph</td>
+			<td>Atria</td>
+			<td>Ankaa</td>
+			<td>Ras Alhague</td>
+			<td>Aldebaran</td>
+			<td>Alderamin</td>
+			<td>Delta Velorum</td>
+		</tr>
+		<tr>
+			<td id='Mimosa'><b>Mimosa</b></td>
+			<td>Castor A</td>
+			<td>Arcturus</td>
+			<td>Alpha Centauri A</td>
+			<td>Shaula</td>
+			<td>Acrux B</td>
+			<td>Saiph</td>
+			<td>Alpha Lupi</td>
+			<td>Capella B</td>
+		</tr>
+		<tr>
+			<td id='Denebola'><b>Denebola</b></td>
+			<td>Phecda</td>
+			<td>Mirfak</td>
+			<td>Rigel</td>
+			<td>Alnitak A</td>
+			<td>Dschubba</td>
+			<td>Canopus</td>
+			<td>Mirach</td>
+			<td>Beta Gruis</td>
+		</tr>
+		<tr>
+			<td id='Procyon'><b>Procyon</b></td>
+			<td>Gienah</td>
+			<td>Alphard</td>
+			<td>Murzim</td>
+			<td>Regulus</td>
+			<td>Wezen</td>
+			<td>Aspidiske</td>
+			<td>Almach</td>
+			<td>Gacrux</td>
+		</tr>
+		<tr>
+			<td id='Caph'><b>Caph</b></td>
+			<td>Delta Velorum</td>
+			<td>Wei</td>
+			<td>Ankaa</td>
+			<td>Atria</td>
+			<td>Aldebaran</td>
+			<td>Achernar</td>
+			<td>Alderamin</td>
+			<td>Ras Alhague</td>
+		</tr>
+		<tr>
+			<td id='Aspidiske'><b>Aspidiske</b></td>
+			<td>Regulus</td>
+			<td>Deneb Kaitos</td>
+			<td>Alphard</td>
+			<td>Almach</td>
+			<td>Gacrux</td>
+			<td>Procyon</td>
+			<td>Murzim</td>
+			<td>Gienah</td>
+		</tr>
+		<tr>
+			<td id='Atria'><b>Atria</b></td>
+			<td>Wei</td>
+			<td>Delta Velorum</td>
+			<td>Achernar</td>
+			<td>Aldebaran</td>
+			<td>Alderamin</td>
+			<td>Ankaa</td>
+			<td>Ras Alhague</td>
+			<td>Caph</td>
+		</tr>
+		<tr>
+			<td id='Algieba'><b>Algieba</b></td>
+			<td>Sun</td>
+			<td>Sirius</td>
+			<td>Peacock</td>
+			<td>Bellatrix</td>
+			<td>Altair</td>
+			<td>Gamma Cassiopeiae</td>
+			<td>Fomalhaut</td>
+			<td>Polaris</td>
+		</tr>
+		<tr>
+			<td id='Alphard'><b>Alphard</b></td>
+			<td>Wezen</td>
+			<td>Aspidiske</td>
+			<td>Procyon</td>
+			<td>Almach</td>
+			<td>Gacrux</td>
+			<td>Gienah</td>
+			<td>Regulus</td>
+			<td>Murzim</td>
+		</tr>
+		<tr>
+			<td id='Acrux B'><b>Acrux B</b></td>
+			<td>Mimosa</td>
+			<td>Saiph</td>
+			<td>Castor A</td>
+			<td>Arcturus</td>
+			<td>Alpha Centauri A</td>
+			<td>Shaula</td>
+			<td>Epsilon Centauri</td>
+			<td>Capella B</td>
+		</tr>
+		<tr>
+			<td id='Alpha Centauri A'><b>Alpha Centauri A</b></td>
+			<td>Saiph</td>
+			<td>Castor A</td>
+			<td>Epsilon Centauri</td>
+			<td>Mimosa</td>
+			<td>Arcturus</td>
+			<td>Acrux B</td>
+			<td>Shaula</td>
+			<td>Capella B</td>
+		</tr>
+		<tr>
+			<td id='Arcturus'><b>Arcturus</b></td>
+			<td>Shaula</td>
+			<td>Alpha Centauri A</td>
+			<td>Capella B</td>
+			<td>Saiph</td>
+			<td>Acrux B</td>
+			<td>Mimosa</td>
+			<td>Castor A</td>
+			<td>Epsilon Centauri</td>
+		</tr>
+		<tr>
+			<td id='Capella B'><b>Capella B</b></td>
+			<td>Mimosa</td>
+			<td>Castor A</td>
+			<td>Alpha Centauri A</td>
+			<td>Shaula</td>
+			<td>Arcturus</td>
+			<td>Epsilon Centauri</td>
+			<td>Acrux B</td>
+			<td>Saiph</td>
+		</tr>
+		<tr>
+			<td id='Gamma2 Velorum'><b>Gamma2 Velorum</b></td>
+			<td>Schedar</td>
+			<td>Alnilam</td>
+			<td>Menkent</td>
+			<td>Enif</td>
+			<td>Eta Centauri</td>
+			<td>Alpha Lupi</td>
+			<td>El Nath</td>
+			<td>Zeta Puppis</td>
+		</tr>
+		<tr>
+			<td id='Gienah'><b>Gienah</b></td>
+			<td>Alphard</td>
+			<td>Regulus</td>
+			<td>Procyon</td>
+			<td>Aspidiske</td>
+			<td>Murzim</td>
+			<td>Almach</td>
+			<td>Gacrux</td>
+			<td>Wezen</td>
+		</tr>
+		<tr>
+			<td id='Peacock'><b>Peacock</b></td>
+			<td>Sirius</td>
+			<td>Polaris</td>
+			<td>Algieba</td>
+			<td>Bellatrix</td>
+			<td>Sun</td>
+			<td>Gamma Cassiopeiae</td>
+			<td>Fomalhaut</td>
+			<td>Altair</td>
+		</tr>
+		<tr>
+			<td id='Zeta Puppis'><b>Zeta Puppis</b></td>
+			<td>Gamma2 Velorum</td>
+			<td>Alpha Lupi</td>
+			<td>Enif</td>
+			<td>Alnilam</td>
+			<td>Eta Centauri</td>
+			<td>El Nath</td>
+			<td>Menkent</td>
+			<td>Schedar</td>
+		</tr>
+		<tr>
+			<td id='Kochab'><b>Kochab</b></td>
+			<td>Alpheratz</td>
+			<td>Miaplacidus</td>
+			<td>Scheat</td>
+			<td>Kaus Australis</td>
+			<td>Avior</td>
+			<td>Etamin</td>
+			<td>Vega</td>
+			<td>Markab</td>
+		</tr>
+		<tr>
+			<td id='Mirfak'><b>Mirfak</b></td>
+			<td>Rigel</td>
+			<td>Alnitak A</td>
+			<td>Mirach</td>
+			<td>Phecda</td>
+			<td>Dschubba</td>
+			<td>Canopus</td>
+			<td>Beta Gruis</td>
+			<td>Denebola</td>
+		</tr>
+		<tr>
+			<td id='Alhena'><b>Alhena</b></td>
+			<td>Antares</td>
+			<td>Deneb Kaitos</td>
+			<td>Deneb</td>
+			<td>Lambda Velorum</td>
+			<td>Sadr</td>
+			<td>Betelgeuse</td>
+			<td>Girtab</td>
+			<td>Alpha Centauri B</td>
+		</tr>
+		<tr>
+			<td id='Epsilon Centauri'><b>Epsilon Centauri</b></td>
+			<td>Alpha Centauri A</td>
+			<td>Capella B</td>
+			<td>Shaula</td>
+			<td>Saiph</td>
+			<td>Arcturus</td>
+			<td>Acrux B</td>
+			<td>Polaris</td>
+			<td>Castor A</td>
+		</tr>
+		<tr>
+			<td id='Menkent'><b>Menkent</b></td>
+			<td>Schedar</td>
+			<td>Gamma2 Velorum</td>
+			<td>Eta Centauri</td>
+			<td>Alpha Lupi</td>
+			<td>El Nath</td>
+			<td>Enif</td>
+			<td>Zeta Puppis</td>
+			<td>Alnilam</td>
+		</tr>
+		<tr>
+			<td id='Sadr'><b>Sadr</b></td>
+			<td>Alhena</td>
+			<td>Lambda Velorum</td>
+			<td>Alpha Centauri B</td>
+			<td>Girtab</td>
+			<td>Deneb Kaitos</td>
+			<td>Betelgeuse</td>
+			<td>Deneb</td>
+			<td>Antares</td>
+		</tr>
+		<tr>
+			<td id='Almach'><b>Almach</b></td>
+			<td>Procyon</td>
+			<td>Alphard</td>
+			<td>Wezen</td>
+			<td>Gacrux</td>
+			<td>Gienah</td>
+			<td>Aspidiske</td>
+			<td>Regulus</td>
+			<td>Murzim</td>
+		</tr>
+		<tr>
+			<td id='El Nath'><b>El Nath</b></td>
+			<td>Alnilam</td>
+			<td>Enif</td>
+			<td>Menkent</td>
+			<td>Rigel</td>
+			<td>Zeta Puppis</td>
+			<td>Gamma2 Velorum</td>
+			<td>Schedar</td>
+			<td>Eta Centauri</td>
+		</tr>
+		<tr>
+			<td id='Antares'><b>Antares</b></td>
+			<td>Lambda Velorum</td>
+			<td>Deneb</td>
+			<td>Alpha Centauri B</td>
+			<td>Alhena</td>
+			<td>Girtab</td>
+			<td>Sadr</td>
+			<td>Betelgeuse</td>
+			<td>Deneb Kaitos</td>
+		</tr>
+		<tr>
+			<td id='Canopus'><b>Canopus</b></td>
+			<td>Rigel</td>
+			<td>Phecda</td>
+			<td>Denebola</td>
+			<td>Mirfak</td>
+			<td>Mirach</td>
+			<td>Beta Gruis</td>
+			<td>Alnitak A</td>
+			<td>Dschubba</td>
+		</tr>
+		<tr>
+			<td id='Eta Centauri'><b>Eta Centauri</b></td>
+			<td>Alnilam</td>
+			<td>El Nath</td>
+			<td>Menkent</td>
+			<td>Gamma2 Velorum</td>
+			<td>Enif</td>
+			<td>Schedar</td>
+			<td>Zeta Puppis</td>
+			<td>Alpha Lupi</td>
+		</tr>
+		<tr>
+			<td id='Vega'><b>Vega</b></td>
+			<td>Alpheratz</td>
+			<td>Markab</td>
+			<td>Scheat</td>
+			<td>Kochab</td>
+			<td>Avior</td>
+			<td>Etamin</td>
+			<td>Kaus Australis</td>
+			<td>Miaplacidus</td>
+		</tr>
+		<tr>
+			<td id='Castor A'><b>Castor A</b></td>
+			<td>Alpha Centauri A</td>
+			<td>Shaula</td>
+			<td>Capella B</td>
+			<td>Mimosa</td>
+			<td>Arcturus</td>
+			<td>Epsilon Centauri</td>
+			<td>Acrux B</td>
+			<td>Saiph</td>
+		</tr>
+		<tr>
+			<td id='Schedar'><b>Schedar</b></td>
+			<td>Gamma2 Velorum</td>
+			<td>Alpha Lupi</td>
+			<td>El Nath</td>
+			<td>Alnilam</td>
+			<td>Menkent</td>
+			<td>Enif</td>
+			<td>Eta Centauri</td>
+			<td>Zeta Puppis</td>
+		</tr>
+		<tr>
+			<td id='Alderamin'><b>Alderamin</b></td>
+			<td>Aldebaran</td>
+			<td>Wei</td>
+			<td>Atria</td>
+			<td>Ankaa</td>
+			<td>Caph</td>
+			<td>Delta Velorum</td>
+			<td>Alnitak A</td>
+			<td>Achernar</td>
+		</tr>
+		<tr>
+			<td id='Gamma Cassiopeiae'><b>Gamma Cassiopeiae</b></td>
+			<td>Altair</td>
+			<td>Sirius</td>
+			<td>Polaris</td>
+			<td>Algieba</td>
+			<td>Sun</td>
+			<td>Fomalhaut</td>
+			<td>Bellatrix</td>
+			<td>Peacock</td>
+		</tr>
+		<tr>
+			<td id='Betelgeuse'><b>Betelgeuse</b></td>
+			<td>Lambda Velorum</td>
+			<td>Deneb</td>
+			<td>Girtab</td>
+			<td>Deneb Kaitos</td>
+			<td>Antares</td>
+			<td>Sadr</td>
+			<td>Alhena</td>
+			<td>Alpha Centauri B</td>
+		</tr>
+		<tr>
+			<td id='Shaula'><b>Shaula</b></td>
+			<td>Epsilon Centauri</td>
+			<td>Acrux B</td>
+			<td>Alpha Centauri A</td>
+			<td>Saiph</td>
+			<td>Capella B</td>
+			<td>Mimosa</td>
+			<td>Castor A</td>
+			<td>Arcturus</td>
+		</tr>
+		<tr>
+			<td id='Polaris'><b>Polaris</b></td>
+			<td>Epsilon Centauri</td>
+			<td>Altair</td>
+			<td>Sirius</td>
+			<td>Gamma Cassiopeiae</td>
+			<td>Sun</td>
+			<td>Peacock</td>
+			<td>Fomalhaut</td>
+			<td>Algieba</td>
+		</tr>
+		<tr>
+			<td id='Alpha Centauri B'><b>Alpha Centauri B</b></td>
+			<td>Sadr</td>
+			<td>Deneb</td>
+			<td>Lambda Velorum</td>
+			<td>Antares</td>
+			<td>Deneb Kaitos</td>
+			<td>Betelgeuse</td>
+			<td>Girtab</td>
+			<td>Alhena</td>
+		</tr>
+		<tr>
+			<td id='Dschubba'><b>Dschubba</b></td>
+			<td>Rigel</td>
+			<td>Denebola</td>
+			<td>Mirach</td>
+			<td>Mirfak</td>
+			<td>Alnitak A</td>
+			<td>Beta Gruis</td>
+			<td>Phecda</td>
+			<td>Canopus</td>
+		</tr>
+		<tr>
+			<td id='Wezen'><b>Wezen</b></td>
+			<td>Gacrux</td>
+			<td>Almach</td>
+			<td>Regulus</td>
+			<td>Procyon</td>
+			<td>Gienah</td>
+			<td>Alphard</td>
+			<td>Markab</td>
+			<td>Murzim</td>
+		</tr>
+		<tr>
+			<td id='Altair'><b>Altair</b></td>
+			<td>Fomalhaut</td>
+			<td>Algieba</td>
+			<td>Bellatrix</td>
+			<td>Sirius</td>
+			<td>Gamma Cassiopeiae</td>
+			<td>Sun</td>
+			<td>Polaris</td>
+			<td>Peacock</td>
+		</tr>
+		<tr>
+			<td id='Avior'><b>Avior</b></td>
+			<td>Markab</td>
+			<td>Vega</td>
+			<td>Scheat</td>
+			<td>Etamin</td>
+			<td>Kaus Australis</td>
+			<td>Miaplacidus</td>
+			<td>Alpheratz</td>
+			<td>Kochab</td>
+		</tr>
+		<tr>
+			<td id='Bellatrix'><b>Bellatrix</b></td>
+			<td>Girtab</td>
+			<td>Peacock</td>
+			<td>Fomalhaut</td>
+			<td>Sirius</td>
+			<td>Altair</td>
+			<td>Algieba</td>
+			<td>Sun</td>
+			<td>Gamma Cassiopeiae</td>
+		</tr>
+		<tr>
+			<td id='Rigel'><b>Rigel</b></td>
+			<td>Mirfak</td>
+			<td>Canopus</td>
+			<td>Mirach</td>
+			<td>Phecda</td>
+			<td>Beta Gruis</td>
+			<td>El Nath</td>
+			<td>Dschubba</td>
+			<td>Denebola</td>
+		</tr>
+		<tr>
+			<td id='Aldebaran'><b>Aldebaran</b></td>
+			<td>Delta Velorum</td>
+			<td>Ras Alhague</td>
+			<td>Caph</td>
+			<td>Ankaa</td>
+			<td>Achernar</td>
+			<td>Atria</td>
+			<td>Wei</td>
+			<td>Alderamin</td>
+		</tr>
+		<tr>
+			<td id='Beta Gruis'><b>Beta Gruis</b></td>
+			<td>Phecda</td>
+			<td>Dschubba</td>
+			<td>Rigel</td>
+			<td>Alnitak A</td>
+			<td>Canopus</td>
+			<td>Mirach</td>
+			<td>Denebola</td>
+			<td>Mirfak</td>
+		</tr>
+		<tr>
+			<td id='Alnitak A'><b>Alnitak A</b></td>
+			<td>Denebola</td>
+			<td>Dschubba</td>
+			<td>Mirach</td>
+			<td>Canopus</td>
+			<td>Mirfak</td>
+			<td>Phecda</td>
+			<td>Beta Gruis</td>
+			<td>Alderamin</td>
+		</tr>
+		<tr>
+			<td id='Enif'><b>Enif</b></td>
+			<td>Gamma2 Velorum</td>
+			<td>Zeta Puppis</td>
+			<td>Alpha Lupi</td>
+			<td>Eta Centauri</td>
+			<td>El Nath</td>
+			<td>Schedar</td>
+			<td>Alnilam</td>
+			<td>Menkent</td>
+		</tr>
+		<tr>
+			<td id='Ankaa'><b>Ankaa</b></td>
+			<td>Atria</td>
+			<td>Delta Velorum</td>
+			<td>Achernar</td>
+			<td>Wei</td>
+			<td>Caph</td>
+			<td>Ras Alhague</td>
+			<td>Alderamin</td>
+			<td>Aldebaran</td>
+		</tr>
+		<tr>
+			<td id='Saiph'><b>Saiph</b></td>
+			<td>Epsilon Centauri</td>
+			<td>Castor A</td>
+			<td>Mimosa</td>
+			<td>Capella B</td>
+			<td>Arcturus</td>
+			<td>Acrux B</td>
+			<td>Shaula</td>
+			<td>Alpha Centauri A</td>
+		</tr>
+		<tr>
+			<td id='Phecda'><b>Phecda</b></td>
+			<td>Mirfak</td>
+			<td>Alnitak A</td>
+			<td>Mirach</td>
+			<td>Dschubba</td>
+			<td>Beta Gruis</td>
+			<td>Denebola</td>
+			<td>Canopus</td>
+			<td>Rigel</td>
+		</tr>
+		<tr>
+			<td id='Fomalhaut'><b>Fomalhaut</b></td>
+			<td>Sirius</td>
+			<td>Altair</td>
+			<td>Sun</td>
+			<td>Algieba</td>
+			<td>Polaris</td>
+			<td>Bellatrix</td>
+			<td>Gamma Cassiopeiae</td>
+			<td>Peacock</td>
+		</tr>
+		<tr>
+			<td id='Alpheratz'><b>Alpheratz</b></td>
+			<td>Etamin</td>
+			<td>Vega</td>
+			<td>Miaplacidus</td>
+			<td>Markab</td>
+			<td>Kaus Australis</td>
+			<td>Scheat</td>
+			<td>Avior</td>
+			<td>Kochab</td>
+		</tr>
+		<tr>
+			<td id='Etamin'><b>Etamin</b></td>
+			<td>Avior</td>
+			<td>Alpheratz</td>
+			<td>Kaus Australis</td>
+			<td>Vega</td>
+			<td>Kochab</td>
+			<td>Scheat</td>
+			<td>Markab</td>
+			<td>Miaplacidus</td>
+		</tr>
+		<tr>
+			<td id='Markab'><b>Markab</b></td>
+			<td>Kochab</td>
+			<td>Etamin</td>
+			<td>Alpheratz</td>
+			<td>Vega</td>
+			<td>Scheat</td>
+			<td>Avior</td>
+			<td>Kaus Australis</td>
+			<td>Wezen</td>
+		</tr>
+		<tr>
+			<td id='Alnilam'><b>Alnilam</b></td>
+			<td>Eta Centauri</td>
+			<td>El Nath</td>
+			<td>Gamma2 Velorum</td>
+			<td>Menkent</td>
+			<td>Enif</td>
+			<td>Zeta Puppis</td>
+			<td>Schedar</td>
+			<td>Alpha Lupi</td>
+		</tr>
+		<tr>
+			<td id='Mirach'><b>Mirach</b></td>
+			<td>Alnitak A</td>
+			<td>Denebola</td>
+			<td>Beta Gruis</td>
+			<td>Rigel</td>
+			<td>Dschubba</td>
+			<td>Canopus</td>
+			<td>Phecda</td>
+			<td>Mirfak</td>
+		</tr>
+		<tr>
+			<td id='Sun'><b>Sun</b></td>
+			<td>Gamma Cassiopeiae</td>
+			<td>Fomalhaut</td>
+			<td>Sirius</td>
+			<td>Altair</td>
+			<td>Peacock</td>
+			<td>Polaris</td>
+			<td>Bellatrix</td>
+			<td>Algieba</td>
+		</tr>
+		<tr>
+			<td id='Kaus Australis'><b>Kaus Australis</b></td>
+			<td>Markab</td>
+			<td>Miaplacidus</td>
+			<td>Alpheratz</td>
+			<td>Scheat</td>
+			<td>Etamin</td>
+			<td>Avior</td>
+			<td>Vega</td>
+			<td>Kochab</td>
+		</tr>
+		<tr>
+			<td id='Miaplacidus'><b>Miaplacidus</b></td>
+			<td>Kaus Australis</td>
+			<td>Etamin</td>
+			<td>Ras Alhague</td>
+			<td>Vega</td>
+			<td>Avior</td>
+			<td>Scheat</td>
+			<td>Kochab</td>
+			<td>Alpheratz</td>
+		</tr>
+		<tr>
+			<td id='Scheat'><b>Scheat</b></td>
+			<td>Etamin</td>
+			<td>Avior</td>
+			<td>Miaplacidus</td>
+			<td>Kochab</td>
+			<td>Alpheratz</td>
+			<td>Markab</td>
+			<td>Kaus Australis</td>
+			<td>Vega</td>
+		</tr>
+		<tr>
+			<td id='Delta Velorum'><b>Delta Velorum</b></td>
+			<td>Alderamin</td>
+			<td>Caph</td>
+			<td>Atria</td>
+			<td>Ras Alhague</td>
+			<td>Wei</td>
+			<td>Aldebaran</td>
+			<td>Achernar</td>
+			<td>Ankaa</td>
+		</tr>
+		<tr>
+			<td id='Lambda Velorum'><b>Lambda Velorum</b></td>
+			<td>Deneb</td>
+			<td>Antares</td>
+			<td>Betelgeuse</td>
+			<td>Sadr</td>
+			<td>Alpha Centauri B</td>
+			<td>Girtab</td>
+			<td>Deneb Kaitos</td>
+			<td>Alhena</td>
+		</tr>
+		<tr>
+			<td id='Murzim'><b>Murzim</b></td>
+			<td>Wezen</td>
+			<td>Gacrux</td>
+			<td>Almach</td>
+			<td>Regulus</td>
+			<td>Procyon</td>
+			<td>Gienah</td>
+			<td>Aspidiske</td>
+			<td>Alphard</td>
+		</tr>
+		<tr>
+			<td id='Sirius'><b>Sirius</b></td>
+			<td>Fomalhaut</td>
+			<td>Sun</td>
+			<td>Altair</td>
+			<td>Bellatrix</td>
+			<td>Gamma Cassiopeiae</td>
+			<td>Polaris</td>
+			<td>Peacock</td>
+			<td>Algieba</td>
+		</tr>
+		<tr>
+			<td id='Deneb'><b>Deneb</b></td>
+			<td>Antares</td>
+			<td>Alpha Centauri B</td>
+			<td>Alhena</td>
+			<td>Sadr</td>
+			<td>Betelgeuse</td>
+			<td>Deneb Kaitos</td>
+			<td>Girtab</td>
+			<td>Lambda Velorum</td>
+		</tr>
+		<tr>
+			<td id='Regulus'><b>Regulus</b></td>
+			<td>Murzim</td>
+			<td>Aspidiske</td>
+			<td>Almach</td>
+			<td>Alphard</td>
+			<td>Wezen</td>
+			<td>Procyon</td>
+			<td>Gacrux</td>
+			<td>Gienah</td>
+		</tr>
+		<tr>
+			<td id='Gacrux'><b>Gacrux</b></td>
+			<td>Regulus</td>
+			<td>Procyon</td>
+			<td>Murzim</td>
+			<td>Alphard</td>
+			<td>Aspidiske</td>
+			<td>Almach</td>
+			<td>Gienah</td>
+			<td>Wezen</td>
+		</tr>
+		<tr>
+			<td id='Deneb Kaitos'><b>Deneb Kaitos</b></td>
+			<td>Alhena</td>
+			<td>Sadr</td>
+			<td>Betelgeuse</td>
+			<td>Deneb</td>
+			<td>Lambda Velorum</td>
+			<td>Alpha Centauri B</td>
+			<td>Antares</td>
+			<td>Aspidiske</td>
+		</tr>
+		<tr>
+			<td id='Ras Alhague'><b>Ras Alhague</b></td>
+			<td>Aldebaran</td>
+			<td>Wei</td>
+			<td>Miaplacidus</td>
+			<td>Delta Velorum</td>
+			<td>Caph</td>
+			<td>Atria</td>
+			<td>Ankaa</td>
+			<td>Achernar</td>
+		</tr>
+		<tr>
+			<td id='Alpha Lupi'><b>Alpha Lupi</b></td>
+			<td>Zeta Puppis</td>
+			<td>Schedar</td>
+			<td>Eta Centauri</td>
+			<td>Mimosa</td>
+			<td>Alnilam</td>
+			<td>Gamma2 Velorum</td>
+			<td>Menkent</td>
+			<td>Enif</td>
+		</tr>
+		<tr>
+			<td id='Wei'><b>Wei</b></td>
+			<td>Achernar</td>
+			<td>Caph</td>
+			<td>Delta Velorum</td>
+			<td>Ras Alhague</td>
+			<td>Atria</td>
+			<td>Ankaa</td>
+			<td>Aldebaran</td>
+			<td>Alderamin</td>
+		</tr>
+	</table>
+<br>
+			</p>
+			<p>
+				<label>Your Code:</label>
+				<textarea name='code' id='code'>//sample code:
+/*
+var position = GetPosition();
+//let's imagine position contains 'Kappa Velorum'
+var myAnswer = '';
+//You should list the jumps that your ship needs to make
+//a sample answer would be:  myAnswer = 'Kappa Velorum,Delta Velorum,Spica,Pollux,Schedar,Antares,Sun';
+//then call SendAnswer
+SendAnswer(myAnswer);
+*/</textarea>
+			</p>
+			<p class='submitForm'>
+				
+				<input type='submit' value='Run My Code' />
+			</p>
+		</form>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div id="footer">
+		<a href="http://www.transactel.net">Transactel 2011</a>
+	</div>
+</div>
+</body>
+<!-- Analytics script -->
+<script src="http://static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(66387986); }catch(err){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66387986ns.gif" /></p></noscript>
+</html>
