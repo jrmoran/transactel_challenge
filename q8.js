@@ -89,10 +89,10 @@ var str = 'EAEB2D31EFD34ED5RD3EETF',
     sol = 'D3';
 
 if( jm8.init(str).mostCommon() === sol ) console.log( 'OK');
-// jm8.debug();
+jm8.debug();
 
 
 // Answer
 // ------
 var ans = jm8.init(baseStr).mostCommon();
-console.log(ans);
+console.log('Item that repeats the most: ' + ans);
