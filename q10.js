@@ -57,11 +57,12 @@ var loadData = function(){
   };
 };
 
-
+// This transverses the list of galaxies and its destinations in a Deep
+// First Search fashion. The code needs some cleaning, but it's good
+// enough for this problem
 var jm10a = function(){
   var galaxies,
   routes    = [],
-  sunRoutes = [],
   sunRoute  = '';
 
   return{
@@ -72,16 +73,22 @@ var jm10a = function(){
     },
 
     // gets a galaxy
-    getGalaxy: function(gname){
+    getGalaxy: function(gname, mark){
 
       for (var i = 0, t=galaxies.length; i < t; i++) {
-          if(galaxies[i].name === gname){
-              return galaxies[i];
-          }
+        if(galaxies[i].name === gname){
+          if (mark === true) galaxies[i].visited = true;
+          return galaxies[i];
+        }
       }
     },
-    /*
-    // checks if a galaxy contains a star
+
+    // gets a galaxy and marks it as visited
+    visitGalaxy: function(gname){
+      return this.getGalaxy(gname, true);
+    },
+
+    // checks if a galaxy contains a star (unused)
     hasStar:function(gname, sname){
       var galaxy = this.getGalaxy(gname);
       for (var i = 0, t=galaxy.destinations.length; i < t; i++) {
@@ -91,7 +98,7 @@ var jm10a = function(){
       }
       return false;
     },
-    // returns the galaxy of a destination
+    // returns the galaxy of a destination (unused)
     whereIs:function(sname){
       for (var i = 0, t=galaxies.length; i < t; i++) {
         if(this.hasStar(galaxies[i].name,sname)){
@@ -99,72 +106,93 @@ var jm10a = function(){
         }
       }
     },
-    */
 
-  goToSunFrom: function(sname){
-    var g1 = this.getGalaxy(sname);
-    for (var i = 0, t=g1.destinations.length; i < t; i++) {
-      routes.push({
-          id: i,
-          route: [g1.name,g1.destinations[i]]
-      });
-    }
-    // jump
-    for (var j = 0; j < 5; j++) {
-      var sunRoute = this.jump();
+    goToSunFrom: function(galaxy_name){
 
-      if(typeof sunRoute!=='undefined'){
-        //////////////////////////////////////
-        // SUN IS HERE
-        return sunRoute;
-      }
-    }
-  },
+      // Grab the first galaxy and start building routes from its
+      // destinations. For example if `A -> B, C, D` the routes array will
+      // contain
+      //
+      // A -> B
+      // A -> C
+      // A -> D
+      //
+      var start = this.getGalaxy(galaxy_name);
 
-  // jumps one level
-  jump:function(){
-    var counter=0;
-    var newRoutes=[];
-
-    // iterate over each route
-    for (var i = 0; i < routes.length; i++) {
-
-      // get the current route
-      var currentRoute = routes[i].route;
-
-      // get the last star in the current route
-      var lasti = currentRoute.length-1;
-      var lastStar = currentRoute[lasti];
-
-      // retrieve galaxy object from the last star
-      var gt = this.getGalaxy(lastStar);
-
-      // build new routes from current route and new destinations
-      for (var j = 0, t=gt.destinations.length; j < t; j++) {
-        // clone current routes
-        var nr = currentRoute.slice(0);
-        nr.push(gt.destinations[j]);
-        newRoutes.push({
-            id: counter++,
-            route:nr
+      for (var i = 0, t= start.destinations.length; i < t; i++) {
+        routes.push({
+            id: i,
+            route: [ start.name, start.destinations[i]]
         });
+      }
 
-        if (gt.destinations[j] === 'Sun') {
-          return nr.join(',');
+      // jump until the sun is found
+      for (;;){
+        sunRoute = this.jump();
+
+        if(typeof sunRoute!=='undefined'){
+          //////////////////////////////////////
+          // SUN IS HERE
+          return sunRoute;
         }
       }
-    }
-    // replace routes
-    routes = newRoutes.slice(0);
-  },
-  debug:function(){
-    for (var i = 0; i < galaxies.length; i++) {
-      //console.log(galaxies[i].name + ':' + galaxies[i].destination);
-    }
+    },
 
-    //console.log(routes.length);
-    //console.log(routes[0]);
-  }
+    // jumps one level
+    jump:function(){
+      var counter=0;
+      var newRoutes=[];
+
+      // iterate over each route
+      for (var i = 0; i < routes.length; i++) {
+
+        // get the current route
+        var currentRoute = routes[i].route;
+
+        // get the last galaxy in the current route
+        var lasti = currentRoute.length-1;
+        var lastDestination = currentRoute[lasti];
+
+        // retrieve galaxy object
+        var galaxy = this.getGalaxy(lastDestination);
+
+        // extend routes from current galaxy destination
+        for (var j = 0, t=galaxy.destinations.length; j < t; j++) {
+
+          // visiting destinations and mark them as visited to avoid
+          // visiting them again
+          var destination = this.getGalaxy( galaxy.destinations[j] );
+
+          if( typeof destination.visited === 'undefined'){
+            this.visitGalaxy(destination.name);
+          }else{
+            continue;
+          }
+
+          // clone current routes
+          var nr = currentRoute.slice(0);
+          nr.push( galaxy.destinations[j] );
+          newRoutes.push({
+              id: counter++,
+              route:nr
+          });
+
+          if ( galaxy.destinations[j] === 'Sun' ) {
+            return nr.join(',');
+          }
+        }
+      }
+      // replace routes
+      routes = newRoutes.slice(0);
+    },
+    debug:function(){
+      for (var i = 0; i < galaxies.length; i++) {
+        //console.log(galaxies[i].name + ':' + galaxies[i].destination);
+      }
+
+      console.log(routes.length);
+      console.log(routes[0]);
+    }
   };
 }();
 
@@ -184,4 +212,3 @@ var start = Date.now();
 var route = jm10a.init( data.galaxies ).goToSunFrom( data.home );
 console.log( 'Solution A [' + (Date.now() - start) + ' ms]');
 console.log( route );
-
