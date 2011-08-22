@@ -1,0 +1,83 @@
+<!DOCTYPE html>  <html> <head>   <title>q9.js</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="galaxies.html">                 galaxies.js               </a>                                           <a class="source" href="q10.html">                 q10.js               </a>                                           <a class="source" href="q7.html">                 q7.js               </a>                                           <a class="source" href="q8.html">                 q8.js               </a>                                           <a class="source" href="q9.html">                 q9.js               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               q9.js             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>               <p>BaseString contains a string of Hexadecimal digits.</p>
+
+<ul>
+<li>Convert it to an array where each digit is an individual element</li>
+<li>Convert the value of each element to base 10</li>
+<li>Eliminate all the elements of the array whose index is a multiple
+of the value of the first element</li>
+<li>Eliminate all the elements of the array whose value is a multiple
+of the value of the first element, including the first element</li>
+<li>Add the values of all remaining elements and submit the total with
+SendAnswer</li>
+</ul>
+
+<p>Implement it however you want as long as the total is correct.</p>
+
+<p>Start by calling GetBaseString on the first line, run your script and
+finish calling SendAnswer.</p>
+
+<p>Every time you press 'Run My Code' a new base string is generated, the
+base string will expire after 3 seconds so you don't get tempted to perform
+the process manually; your script should take less than three seconds to run.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="kd">var</span> <span class="nx">baseStr</span> <span class="o">=</span> <span class="s1">&#39;64d69fe87bf2924d69fe87c031c4d69fe87c13fb4d69fe87c40424d69fe87c95904d69fe87ca52c4d69fe87cb4c94d69fe87cc46e4d69fe87cd40d4d69fe87ce3f24d69fe87d1b704d69fe87d2b0e4d69fe87d3ab34d69fe87d4a504d69fe87d59ec4d69fe87d698a4d69fe87d792a4d69fe87d88d14d69fe87d986d4d69fe87da80d&#39;</span><span class="p">;</span></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-2">&#182;</a>               </div>               <h2>Solution</h2>             </td>             <td class="code">               <div class="highlight"><pre><span class="kd">var</span> <span class="nx">jm9</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+
+  <span class="kd">var</span> <span class="nx">items</span> <span class="o">=</span> <span class="p">[];</span>
+
+  <span class="k">return</span><span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-3">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-3">&#182;</a>               </div>               <p>Process a string by converting each character to a base 10
+integer and collecting them.</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="nx">items</span><span class="p">.</span><span class="nx">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">t</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">items</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+            <span class="nx">label</span>   <span class="o">:</span> <span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span>
+            <span class="nx">value</span>   <span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">str</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="mi">16</span><span class="p">),</span>
+            <span class="nx">included</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+
+      <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+    <span class="p">},</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>Flags invalid items</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nx">clean</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <p>caching</p>             </td>             <td class="code">               <div class="highlight"><pre>      <span class="kd">var</span> <span class="nx">fi</span>  <span class="o">=</span> <span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+          <span class="nx">fiv</span> <span class="o">=</span> <span class="nx">fi</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span></pre></div>             </td>           </tr>                               <tr id="section-6">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-6">&#182;</a>               </div>               <p>first item since its value is multiple of itself</p>             </td>             <td class="code">               <div class="highlight"><pre>      <span class="nx">fi</span><span class="p">.</span><span class="nx">included</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">t</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-7">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-7">&#182;</a>               </div>               <p>items which <em>index</em> is multiple of the first item's value
+items which <em>value</em> is multiple of the first item's value</p>             </td>             <td class="code">               <div class="highlight"><pre>        <span class="k">if</span> <span class="p">(</span> <span class="nx">i</span> <span class="o">%</span> <span class="nx">fiv</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span> <span class="o">%</span> <span class="nx">fiv</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">included</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+
+      <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+    <span class="p">},</span></pre></div>             </td>           </tr>                               <tr id="section-8">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-8">&#182;</a>               </div>               <p>Returns the sum of all elements whose flag <code>included</code> is set to true</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nx">sum</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">t</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">total</span> <span class="o">+=</span> <span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">included</span> <span class="o">===</span> <span class="kc">true</span> <span class="o">?</span> <span class="nx">items</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">value</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="nx">total</span><span class="p">;</span>
+    <span class="p">},</span>
+
+    <span class="nx">debug</span><span class="o">:</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span> <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}();</span></pre></div>             </td>           </tr>                               <tr id="section-9">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-9">&#182;</a>               </div>               <h2>Testing</h2>
+
+<p>let's imagine baseString contains <code>646A95EC1F23D161</code>. The value of our first
+element is 6</p>
+
+<ul>
+<li>we should eliminate the <strong>E</strong> because its index is <code>6</code></li>
+<li>we should eliminate the <strong>D</strong> because its index <code>12</code> is a multiple of <code>6</code></li>
+<li>we should eliminate the <strong>C</strong> because its value <code>12</code> is a multiple of <code>6</code></li>
+<li>we should eliminate the <strong>6's</strong> at indexes <code>0</code>, <code>2</code> and <code>14</code>, because <code>6</code>
+is a multiple of <code>6</code></li>
+</ul>             </td>             <td class="code">               <div class="highlight"><pre><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;646A95EC1F23D161&#39;</span><span class="p">,</span>
+    <span class="nx">sol</span> <span class="o">=</span> <span class="mi">51</span><span class="p">,</span>
+    <span class="nx">obj</span> <span class="o">=</span> <span class="nx">jm9</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span></pre></div>             </td>           </tr>                               <tr id="section-10">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-10">&#182;</a>               </div>               <p>clean object</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">obj</span><span class="p">.</span><span class="nx">debug</span><span class="p">();</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">clean</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;CLEANING&#39;</span><span class="p">);</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">debug</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">sum</span><span class="p">()</span> <span class="o">===</span> <span class="nx">sol</span> <span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">);</span></pre></div>             </td>           </tr>                               <tr id="section-11">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-11">&#182;</a>               </div>               <h2>Answer</h2>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\nSolution&quot;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">jm9</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">baseStr</span><span class="p">).</span><span class="nx">clean</span><span class="p">().</span><span class="nx">sum</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="s1">&#39;Total sum is: &#39;</span> <span class="o">+</span> <span class="nx">sum</span> <span class="p">);</span>
+
+</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 
